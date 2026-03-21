@@ -33,7 +33,7 @@ Claude prepares markdown with frontmatter (title, subtitle)
         |
 scripts/substack-publish.py (python-substack)
         |
-Draft created on Substack -> returns draft URL
+Draft created on Substack -> constructs URL from publication + draft ID
         |
 User previews in Substack UI -> publishes manually
 ```
@@ -55,14 +55,14 @@ User previews in Substack UI -> publishes manually
 2. Claude drafts the article in markdown
 3. Claude saves to `drafts/<slug>.md` with frontmatter
 4. Script pushes draft to Substack
-5. Returns draft URL for preview
+5. Script constructs and returns draft URL for preview
 
 ### `/publish-substack <filepath>`
 
 1. Reads the specified markdown file
 2. Parses frontmatter (title, subtitle) and body
 3. Script pushes draft to Substack
-4. Returns draft URL for preview
+4. Script constructs and returns draft URL for preview
 
 ## Draft Markdown Format
 
@@ -81,9 +81,10 @@ Responsibilities:
 - Read auth credentials from `~/.claude/substack-auth.env`
 - Parse markdown file (frontmatter + body)
 - Convert markdown body to HTML
-- Call `python-substack` API: create draft with title, subtitle, body
+- Retrieve `user_id` via `api.get_user().get("id")` after auth
+- Call `python-substack` API: create draft with title, subtitle, body, user_id
 - Set audience to "everyone" (free)
-- Return the draft URL
+- Construct draft URL: `https://cinderzhang.substack.com/publish/post/<draft_id>`
 
 Error handling:
 - Missing auth file: print setup instructions and exit 1
@@ -94,18 +95,22 @@ Error handling:
 
 First-time setup (prompted by skill):
 
+Prerequisites:
+- Substack account must have a password set. Passwordless (magic-link) accounts must set one at substack.com before using this skill.
+
 1. Create `~/.claude/substack-auth.env`:
    ```
    SUBSTACK_EMAIL=your_email
    SUBSTACK_PASSWORD=your_password
    ```
-2. Ensure file is not committed (lives outside repo)
+2. Lock down permissions: `chmod 600 ~/.claude/substack-auth.env`
+3. File lives outside repo — never committed
 
 ## Dependencies
 
-- Python 3.12+
-- `python-substack` (`pip install python-substack`)
-- `python-dotenv` (included with python-substack)
+- Python 3.9+
+- `python-substack` (`pip install python-substack`) — pulls in `requests`, `python-dotenv`, `PyYAML`
+- `python-frontmatter` (`pip install python-frontmatter`) — for parsing markdown frontmatter
 
 ## Out of Scope
 
