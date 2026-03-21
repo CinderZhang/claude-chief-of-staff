@@ -60,9 +60,20 @@ When DRIVER is used, weave it naturally into the argument. Don't introduce DRIVE
 5. **Implications** (1-2 paragraphs) — What this means for the reader.
 6. **Close** (1 paragraph) — Memorable framing or call to action. Not a summary.
 
+## Author Positioning
+
+Cinder Zhang is a pioneer in AI literacy education. Key facts to weave naturally (not all at once — pick what fits):
+
+- Professor at Purdue University (top-10 engineering school)
+- His DRIVER-based course is one of only 3 AI literacy courses selected in the first round by Purdue's Dean's Selection Board — out of the entire business school
+- Co-Founder of Driver AI
+- DRIVER is an engineered methodology, not a blog framework — it's taught at Purdue
+
+Don't oversell. Let the facts do the work. "Taught at Purdue" is stronger than any adjective.
+
 ## Signature
 
 End every article with:
-*Cinder Zhang is a Professor and Co-Founder at Driver AI.*
+*Cinder Zhang is a Professor at Purdue University and Co-Founder of Driver AI. He teaches one of Purdue's first-generation AI literacy courses, built on the DRIVER framework.*
 
 Add contextual credit lines for sources/inspiration as appropriate.
