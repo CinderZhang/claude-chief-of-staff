@@ -53,6 +53,25 @@ Do a quick scan of email for anything urgent:
 - Flag Tier 1 items (from key contacts, marked urgent, or time-sensitive)
 - Don't do a full triage — just surface what's critical
 
+### Step 4.5: DRIVER Evolution Check
+
+Check the Obsidian vault for pending DRIVER evolution notes:
+
+```bash
+ls "/mnt/d/OneDrive - purdue.edu/Obsidian/DRIVER-Evolution/" 2>/dev/null
+```
+
+For each file found, read it and check if it contains `Status: pending-review`.
+If any pending notes exist, include in the briefing under a DRIVER EVOLUTION section:
+
+```
+DRIVER EVOLUTION
+- [date]: [insight summary] — Review at DRIVER-Evolution/[filename]
+- Action: Review and decide whether to incorporate into DRIVER
+```
+
+If no pending notes or directory doesn't exist, skip this section entirely.
+
 ### Step 5: Present the Briefing
 
 Format the briefing as follows:
@@ -76,6 +95,9 @@ GOALS
 
 URGENT
 - [Any Tier 1 items from inbox, or "No urgent items"]
+
+DRIVER EVOLUTION
+- [Any pending evolution notes, or skip if none]
 
 FOCUS RECOMMENDATION
 Based on your calendar and priorities, here's what I'd focus on today:
