@@ -13,46 +13,58 @@
 #   - Update progress (0.0 to 1.0) as you make headway
 #   - Claude will flag when progress stalls
 
-quarter: "Q1 2026"
-last_updated: "2026-01-01"
+quarter: "Q2 2026"
+last_updated: "2026-03-21"
+
+# Operating principle: Automate everything that isn't these goals.
 
 objectives:
-  - name: "Example: Launch new product feature"
-    target: "Ship to 100% of users by end of Q1"
+  - name: "Commercialize DRIVER framework"
+    target: "Launch driver-plugin to paying users by end of Q2"
     priority: 1
     key_results:
-      - "Feature spec complete by Jan 31"
-      - "Beta with 10 customers by Feb 28"
-      - "Full rollout by Mar 31"
-    progress: 0.0
+      - "driver-plugin beta with 10 users by April 30"
+      - "Pricing and distribution model finalized by April 15"
+      - "First paying customer by June 30"
+    progress: 0.1
     status: "on_track"   # on_track | at_risk | behind | complete
-    notes: ""
+    notes: "Pre-launch. Plugin exists but no users yet."
 
-  - name: "Example: Grow revenue 30%"
-    target: "$X pipeline by end of quarter"
+  - name: "Build DRIVER thought leadership via Substack"
+    target: "Establish Cinder Zhang as the voice of AI working competency"
     priority: 2
     key_results:
-      - "Hire 2 sales reps by Feb 15"
-      - "Launch outbound motion by Feb 28"
-      - "Close 5 new enterprise deals by Mar 31"
-    progress: 0.0
+      - "Publish 2 articles per month (8 total by end of Q2)"
+      - "Grow from 23 to 200+ subscribers"
+      - "Content pipeline fully operational (/write-substack skill)"
+    progress: 0.2
     status: "on_track"
-    notes: ""
+    notes: "First article published 2026-03-21. Pipeline built and tested."
 
-  - name: "Example: Build high-performing team"
-    target: "Complete hiring plan and establish rituals"
+  - name: "Produce DRIVER teaching videos"
+    target: "Launch video series on impactful AI working competency topics"
     priority: 3
     key_results:
-      - "Fill 3 open roles by Feb 28"
-      - "Launch weekly team sync and monthly retrospective"
-      - "Complete first round of performance reviews"
+      - "Brainstorm and select 5 high-impact video topics by April 15"
+      - "Produce and publish first 2 videos by May 31"
+      - "edu-video skill tested on DRIVER content"
     progress: 0.0
     status: "on_track"
-    notes: ""
+    notes: "edu-video skill exists. Need to brainstorm topics."
 
-# Personal goals (optional — Claude respects work-life balance)
+  - name: "Secure Purdue UCC confirmation for DRIVER course"
+    target: "AI working competency course officially in Purdue curriculum"
+    priority: 4
+    key_results:
+      - "UCC decision by May 2026"
+      - "If confirmed: update all DRIVER positioning to reflect institutional status"
+      - "If not confirmed: identify alternative paths"
+    progress: 0.5
+    status: "on_track"
+    notes: "Already 1 of 3 DSB first-round picks. UCC pending."
+
+# Personal goals
 personal:
-  - name: "Example: Exercise 4x per week"
-    progress: 0.0
-  - name: "Example: Read 12 books this year"
-    progress: 0.0
+  - name: "Automate low-leverage work"
+    progress: 0.3
+    notes: "AI Chief of Staff operational. Substack pipeline built. Keep going."
