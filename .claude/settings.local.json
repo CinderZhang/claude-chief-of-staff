@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/home/cinder/claude-chief-of-staff/scripts/tavily-search.sh:*)",
+      "Bash(/home/cinder/.claude/substack-venv/bin/python3 /home/cinder/claude-chief-of-staff/scripts/substack-publish.py:*)"
+    ]
+  }
+}

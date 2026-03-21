@@ -121,6 +121,16 @@ Read `references/guru-personas.md` for all persona definitions.
 
 **Plus the dynamic gurus selected in Step 2.**
 
+### Step 4.5: Humanize
+
+Run the `humanizer` skill on the article to remove signs of AI-generated writing.
+This catches patterns the guru team might miss: inflated symbolism, promotional
+language, em dash overuse, rule of three, AI vocabulary words, negative
+parallelisms, and excessive conjunctive phrases.
+
+After humanizing, re-read the article to confirm it still sounds like Cinder's
+voice and hasn't lost any substance.
+
 ### Step 5: DRIVER Evolution Check
 
 Ask: "Did this research or writing process surface anything that could
