@@ -47,6 +47,8 @@ ISSUES:
 - Paragraphs that restate the previous paragraph differently
 - "In conclusion" followed by nothing new
 - Name-dropping without substance
+- **Sounds like AI wrote it** — too polished, too symmetrical, every paragraph perfectly structured. Real writing has rough edges. If it reads like a machine, it fails.
+- **Too much leaf, not enough forest** — drowning in implementation details of one example instead of making the bigger argument. Case study should illustrate, not dominate.
 
 **Output format:**
 PASS — Article withstands hostile scrutiny
@@ -80,6 +82,7 @@ ISSUES:
 
 **Checks:**
 - Are technical claims accurate and current?
+- **Are model names and version numbers up to date?** (e.g., GPT-5/5.4, not GPT-4; Claude 4.6, not Claude 3.5). Outdated references destroy credibility in a fast-moving field.
 - Would a senior developer find this credible?
 - Are code examples (if any) correct and idiomatic?
 - Is the technical depth appropriate — not too shallow, not unnecessarily deep?
