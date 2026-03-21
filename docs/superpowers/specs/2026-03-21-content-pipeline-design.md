@@ -23,6 +23,8 @@ A `/write-substack` skill that orchestrates a full content pipeline: parallel re
 | Writing tone | Academic-authoritative + provocative framing | Cinder's voice: credible professor with strong opinions |
 | User involvement | Hands-off until final review | Maximum leverage; user approves once at the end |
 | Publish mode | Draft only, user publishes from Substack UI | Safe — preview before going live |
+| Auth | Cookie-based (`SUBSTACK_COOKIE`), not email/password | Substack blocks programmatic login with CAPTCHA |
+| Drafts path | `/home/cinder/claude-chief-of-staff/drafts/` | Pinned to repo, gitignored |
 
 ## Architecture
 
@@ -88,9 +90,30 @@ A `/write-substack` skill that orchestrates a full content pipeline: parallel re
 ### Research Subagent
 
 - Uses Tavily API (direct curl, not MCP)
+- Env var: `TAVILY_API_KEY` in `~/.claude/substack-auth.env`
+- Endpoint: `POST https://api.tavily.com/search`
+- Example: `curl -s -X POST "https://api.tavily.com/search" -H "Content-Type: application/json" -d '{"api_key": "$TAVILY_API_KEY", "query": "...", "max_results": 5}'`
 - Runs 3-5 searches related to the topic
 - Gathers: competing perspectives, recent data, quotable sources, related articles
-- Outputs: structured research brief (markdown)
+- Outputs structured research brief:
+
+```markdown
+# Research Brief: <topic>
+
+## Key Findings
+- <finding 1 with source URL>
+- <finding 2 with source URL>
+
+## Competing Perspectives
+- <perspective 1>
+- <perspective 2>
+
+## Quotable Data Points
+- <stat or quote with attribution>
+
+## Related Articles
+- <title> — <URL> — <1-line summary>
+```
 
 ### Writer Subagent
 
@@ -144,14 +167,14 @@ Article: "<article title>"
 | `commands/write-substack.md` | Skill definition — full pipeline orchestration |
 | `scripts/substack-publish.py` | Publish script (POST + PUT + verify, already built) |
 | `scripts/tavily-search.sh` | Research script — Tavily API wrapper |
-| `references/writer-voice.md` | Tone guide and writing style for writer subagent |
-| `references/guru-personas.md` | Fixed + dynamic guru definitions with checklists |
+| `references/writer-voice.md` | Tone guide and writing style for writer subagent **(to be created)** |
+| `references/guru-personas.md` | Fixed + dynamic guru definitions with checklists **(to be created)** |
 | `drafts/` | Local drafts (gitignored) |
 | Obsidian: `DRIVER-Evolution/` | Evolution notes tagged for morning brief |
 
 ## Morning Brief Integration
 
-The `/gm` command checks Obsidian `DRIVER-Evolution/` for files with `Status: pending-review` and surfaces them:
+**Required modification:** Add a new step to `commands/gm.md` that checks Obsidian `DRIVER-Evolution/` for files with `Status: pending-review` and surfaces them:
 
 ```
 DRIVER EVOLUTION
@@ -165,11 +188,13 @@ Yesterday's research on "AI Employees" surfaced:
 Modeled on edu-video's iterative review:
 
 1. All gurus (fixed + dynamic) review the article simultaneously
-2. Each guru produces a critique with specific issues and locations
-3. Writer subagent revises based on all critiques
+2. Each guru outputs either `PASS` or `ISSUES:` followed by specific critiques with locations
+3. If any guru outputs `ISSUES`: writer subagent revises based on all critiques
 4. Gurus re-review the revised version
-5. Repeat until all gurus pass with zero new issues
-6. Chief of Staff reads the final article before presenting to user
+5. Loop exits when ALL gurus output `PASS`
+6. **Max 3 rounds** — if not resolved after 3 iterations, Chief of Staff presents the article to user with unresolved guru feedback for human judgment
+7. **Contradicting gurus** — if two gurus give conflicting feedback, Chief of Staff flags the conflict and presents both perspectives to the user
+8. Chief of Staff reads the final article before presenting to user
 
 ## Error Handling
 
