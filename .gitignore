@@ -21,3 +21,6 @@ cache/
 local/
 *.local.md
 *.local.yaml
+
+# Drafts
+drafts/
