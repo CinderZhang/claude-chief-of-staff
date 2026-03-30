@@ -8,7 +8,10 @@ import frontmatter
 from substack import Api
 from substack.post import Post
 
-AUTH_FILE = os.path.expanduser("~/.claude/substack-auth.env")
+# Check CoS config first, then fallback to ~/.claude
+_COS_AUTH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "config", ".env")
+_CLAUDE_AUTH = os.path.expanduser("~/.claude/substack-auth.env")
+AUTH_FILE = _COS_AUTH if os.path.exists(_COS_AUTH) else _CLAUDE_AUTH
 PUBLICATION = "cinderzhang"
 
 def main():

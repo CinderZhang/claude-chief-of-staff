@@ -7,7 +7,26 @@
 # Status: pending | in_progress | blocked | complete
 # Priority: 1 (urgent) | 2 (high) | 3 (normal) | 4 (low)
 
-tasks: []
+tasks:
+  - id: "task-001"
+    title: "Review DRIVER video tutorials — choose series direction"
+    description: "CoS produced 2 topic variants and 2 opener videos. Review at d:\\dev\\driver-video-tutorials\\. Watch both videos, compare philosophy-forward (A) vs problem-forward (B), pick the series direction."
+    status: "pending"
+    priority: 2
+    due_date: "2026-03-30"
+    goal_alignment: "Produce DRIVER teaching videos"
+    created: "2026-03-23"
+    notes: "CoS delegated 2026-03-23. Two topic lists + two videos produced. Next: boss reviews and picks direction, then CoS produces videos 2-5."
+
+  - id: "task-002"
+    title: "Brainstorm 5 video topics for DRIVER series"
+    description: "Select final 5 topics from the two variants produced by CoS."
+    status: "in_progress"
+    priority: 2
+    due_date: "2026-04-15"
+    goal_alignment: "Produce DRIVER teaching videos"
+    created: "2026-03-23"
+    notes: "Two variants brainstormed 2026-03-23. Boss needs to select or mix. Deadline from Goal #3 KR."
 
 # Example task format:
 #

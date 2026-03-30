@@ -48,9 +48,9 @@ objectives:
       - "Brainstorm and select 5 high-impact video topics by April 15"
       - "Produce and publish first 2 videos by May 31"
       - "edu-video skill tested on DRIVER content"
-    progress: 0.0
+    progress: 0.15
     status: "on_track"
-    notes: "edu-video skill exists. Need to brainstorm topics."
+    notes: "2026-03-23: Topics brainstormed (2 variants x 5 topics). First 2 videos in production via edu-video pipeline. Boss to review and select series direction."
 
   - name: "Secure Purdue UCC confirmation for DRIVER course"
     target: "AI working competency course officially in Purdue curriculum"

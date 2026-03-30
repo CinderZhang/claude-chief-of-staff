@@ -1,6 +1,11 @@
 # OS files
 .DS_Store
 Thumbs.db
+desktop.ini
+
+# Synology
+.SynologyWorkingDirectory/
+SynologyDrive/
 
 # Editor files
 *.swp
@@ -34,3 +39,4 @@ zhangcinder.json
 # Python
 __pycache__/
 *.pyc
+.gstack/
