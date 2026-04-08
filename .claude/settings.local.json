@@ -2,7 +2,16 @@
   "permissions": {
     "allow": [
       "Bash(/home/cinder/claude-chief-of-staff/scripts/tavily-search.sh:*)",
-      "Bash(/home/cinder/.claude/substack-venv/bin/python3 /home/cinder/claude-chief-of-staff/scripts/substack-publish.py:*)"
+      "Bash(/home/cinder/.claude/substack-venv/bin/python3 /home/cinder/claude-chief-of-staff/scripts/substack-publish.py:*)",
+      "Read(//d//**)",
+      "Bash(wc -l scripts/*.py)",
+      "Bash(uv run python -c \":*)",
+      "Bash(uv run:*)",
+      "Bash(uv add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(gh pr:*)"
     ]
   }
 }
