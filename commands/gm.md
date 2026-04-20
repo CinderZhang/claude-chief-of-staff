@@ -39,6 +39,23 @@ Read `~/.claude/my-tasks.yaml` and identify:
 - Tasks due in the next 3 days (approaching)
 - Tasks that can be completed today given the calendar
 
+### Step 2.5: Job Opportunities Scan
+
+Active job hunt context: see `C:\Users\cinde\.claude\projects\D--ChiefStaff\memory\project_job_hunt_2026.md`.
+Profile fit: AI-finance intersection, tenure-track or senior faculty, leverages DRIVER
+framework + World Scientific 3-book contract + top-journal pub record. Hard filters:
+pay ≥ current Purdue comp; research-resource-positive (not admin-heavy at resource-poor
+schools); brand ≥ Purdue Mitch Daniels School of Business.
+
+1. Use LinkedIn MCP `search_jobs` with rotating queries: "applied AI finance professor",
+   "financial AI research", "quantitative AI faculty", "AI finance tenure track"
+2. Cross-check with any open applications in the job hunt memory to avoid duplicates
+3. Score each new hit 1–5 on fit (5 = Booth-tier, 1 = MSU-tier)
+
+Present only fit ≥ 3 under a JOB OPPORTUNITIES section:
+- [role] @ [institution] — fit [N/5]: [one-line reasoning]
+- If none qualify, skip the section entirely. Do not pad.
+
 ### Step 3: Goals Check
 
 Read `~/.claude/goals.yaml` and briefly assess:
@@ -72,6 +89,47 @@ DRIVER EVOLUTION
 
 If no pending notes or directory doesn't exist, skip this section entirely.
 
+### Step 4.7: Entropy Research Development
+
+Cinder's active research pivot (as of April 2026): information-theoretic foundations
+for AI-augmented finance. Source material is in `D:/github/MSF_AI_Finance/Cases/` — six
+entropy-based regime-shift case studies (textual, sample-space, regulatory, structural,
+transfer, systemic/belief entropy). See memory: `reference_msf_cases.md`.
+
+Each morning, nudge one concrete step forward. Rotate focus across:
+- Case operationalization (one case → formal test specification)
+- Paper draft sections (one section → 500 words of drafting)
+- Methodology notes (one Shannon concept → one paragraph of theoretical framing)
+- Literature (one paper → one-paragraph note on how it connects)
+
+Gradually develop topics with Cinder. Do not dump a menu. Pick ONE next step based on
+what's been touched least recently (check file mtimes in the Cases directory).
+
+Present under ENTROPY RESEARCH section:
+- Today's nudge: [ONE specific, 30–60 min action]
+- Why this one: [one line — which case/paper, why it's due]
+
+If Cinder already has a live entropy-research thread from prior days, continue that
+thread rather than starting fresh.
+
+### Step 4.8: Investment Position Watch
+
+Read `C:\Users\cinde\.claude\investment-positions.yaml`. If the file doesn't exist,
+skip this section and flag it: "Investment positions file not set up — ask Cinder to
+seed positions."
+
+For each active thesis:
+1. Scan Gmail for overnight news matching the thesis keywords (e.g., "Hormuz", "Iran",
+   "oil", "VIX", "defense stocks")
+2. Check for material signals: price moves, policy actions, geopolitical escalation
+3. Flag if thesis is invalidated, confirmed, or in need of trim/add
+
+Present under INVESTMENT WATCH section:
+- [thesis name]: [signal summary] — [action: monitor / trim / add / exit]
+- If all theses are quiet: "Investment watch: all quiet."
+
+Do NOT give trade advice unprompted. Surface signals; Cinder decides.
+
 ### Step 5: Present the Briefing
 
 Format the briefing as follows:
@@ -96,8 +154,18 @@ GOALS
 URGENT
 - [Any Tier 1 items from inbox, or "No urgent items"]
 
+JOB OPPORTUNITIES
+- [Fit ≥3 hits, or skip section entirely]
+
 DRIVER EVOLUTION
 - [Any pending evolution notes, or skip if none]
+
+ENTROPY RESEARCH
+- Today's nudge: [ONE action]
+- Why this one: [one line]
+
+INVESTMENT WATCH
+- [Thesis signals, or "all quiet"]
 
 FOCUS RECOMMENDATION
 Based on your calendar and priorities, here's what I'd focus on today:
