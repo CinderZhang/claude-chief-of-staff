@@ -30,6 +30,9 @@ local/
 # Drafts
 drafts/
 
+# Videos — rendered video work, Synology-backed, not for the public template repo
+videos/
+
 # Credentials and secrets
 cinderuark.json
 zhangcinder.json
